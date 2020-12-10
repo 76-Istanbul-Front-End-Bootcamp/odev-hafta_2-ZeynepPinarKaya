@@ -5,12 +5,12 @@
 
 var person = {
   name: "John",
-  message: function () {
-    console.log("Hello, " + person.name)
-  }.bind(person)
+  message: function () {    
+    console.log("Hello, " + this.name)
+  }
 }
 
-var messageFunc = person.message
+var messageFunc = person.message.bind(person);
 messageFunc();
 
 
